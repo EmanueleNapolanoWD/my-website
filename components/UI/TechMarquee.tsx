@@ -168,11 +168,6 @@ export default function TechMarquee() {
   return (
     <section className="relative bg-[#0a0a0a] py-14 border-y border-white/6 overflow-hidden">
 
-      {/* Label */}
-      <p className="text-center text-xs font-medium tracking-[0.2em] uppercase text-white/25 mb-8">
-        Stack tecnologico
-      </p>
-
       {/* Fade edges */}
       <div
         aria-hidden

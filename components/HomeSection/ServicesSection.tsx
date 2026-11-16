@@ -159,9 +159,6 @@ export default function ServicesSection() {
 
         {/* Header */}
         <div className="max-w-2xl mb-16">
-          <span className="inline-flex items-center gap-2 rounded-full border border-violet-500/30 bg-violet-500/8 px-4 py-1.5 text-xs font-medium tracking-widest uppercase text-violet-400 mb-6">
-            Cosa faccio
-          </span>
           <h2 className="text-4xl sm:text-5xl font-bold text-white leading-[1.1] tracking-tight mb-5">
             Soluzioni digitali
             <br />

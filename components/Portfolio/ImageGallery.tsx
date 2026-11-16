@@ -5,9 +5,9 @@ import Image from 'next/image'
 
 const INTERVAL_MS = 3500
 
-export default function ImageGallery({ images, title }: { images: string[]; title: string }) {
-  const [active, setActive]   = useState(0)
-  const [paused, setPaused]   = useState(false)
+export default function ImageGallery({ images, title, aspectClass }: { images: string[]; title: string, aspectClass?: string }) {
+  const [active, setActive] = useState(0)
+  const [paused, setPaused] = useState(false)
   const [lightbox, setLightbox] = useState(false)
 
   const next = useCallback(
@@ -32,7 +32,7 @@ export default function ImageGallery({ images, title }: { images: string[]; titl
     <>
       {/* Slide principale */}
       <div
-        className="relative w-full aspect-[16/9] rounded-2xl overflow-hidden bg-[#111] border border-white/8 cursor-zoom-in select-none"
+        className={`relative w-full ${aspectClass} rounded-2xl overflow-hidden bg-[#111] border border-white/8 cursor-zoom-in select-none`}
         onMouseEnter={() => setPaused(true)}
         onMouseLeave={() => setPaused(false)}
         onClick={() => setLightbox(true)}
@@ -104,11 +104,10 @@ export default function ImageGallery({ images, title }: { images: string[]; titl
               key={i}
               onClick={() => setActive(i)}
               aria-label={`Vai a immagine ${i + 1}`}
-              className={`rounded-full transition-all duration-300 ${
-                i === active
-                  ? 'w-4 h-1.5 bg-white'
-                  : 'w-1.5 h-1.5 bg-white/25 hover:bg-white/50'
-              }`}
+              className={`rounded-full transition-all duration-300 ${i === active
+                ? 'w-4 h-1.5 bg-white'
+                : 'w-1.5 h-1.5 bg-white/25 hover:bg-white/50'
+                }`}
             />
           ))}
         </div>
